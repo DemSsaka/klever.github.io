@@ -1,0 +1,54 @@
+.gold-quote {
+  position: fixed;
+  z-index: 65;
+  left: max(12px, calc((100vw - 1280px) / 4 - 82px));
+  top: 45%;
+  width: 164px;
+  transform: translateY(-50%);
+  color: #f5f3e8;
+  font: 12px/1.45 Onest, system-ui, sans-serif;
+  background: linear-gradient(145deg, #1d4e3d, #103729);
+  border: 1px solid #8fa89566;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px #102c1d21, inset 0 1px #ffffff1a;
+}
+.gold-quote * { box-sizing: border-box; }
+.gold-quote summary { list-style: none; cursor: pointer; padding: 16px 14px; }
+.gold-quote summary::-webkit-details-marker { display: none; }
+.gold-quote summary:focus-visible, .gold-quote a:focus-visible, .gold-quote button:focus-visible { outline: 2px solid #e7c16c; outline-offset: 4px; }
+.gold-quote-heading { display: flex; align-items: center; gap: 9px; margin-bottom: 13px; }
+.gold-quote-symbol { display: grid; place-items: center; width: 34px; height: 36px; border: 1px solid #d5b263; border-radius: 8px; color: #f0d48f; font-size: 19px; font-weight: 500; flex-shrink: 0; }
+.gold-quote-label { font-size: 12px; font-weight: 600; }
+.gold-quote-delay { display: block; color: #c1d1c7; font-size: 10px; font-weight: 400; }
+.gold-quote-price { display: block; font-size: 22px; line-height: 1.2; letter-spacing: -.04em; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.gold-quote-unit { display: block; color: #d4c493; font-size: 10px; margin-top: 4px; }
+.gold-quote-arrow { float: right; color: #d8bd7a; font-size: 14px; }
+.gold-quote[open] .gold-quote-arrow { transform: rotate(180deg); }
+.gold-quote-body { border-top: 1px solid #c1d3c32b; padding: 12px 14px 14px; }
+.gold-quote-change { font-weight: 500; color: #cde4ca; margin: 0 0 9px; }
+.gold-quote-change[data-direction="down"] { color: #efc5b0; }
+.gold-quote-time { display: block; font-size: 10px; color: #c4d2ca; }
+.gold-quote-status { display: block; color: #e8cc8d; font-size: 10px; margin-top: 5px; }
+.gold-quote a { display: inline-block; color: #f0d48f; font-size: 11px; margin-top: 12px; text-underline-offset: 3px; }
+.gold-quote-note { font-size: 10px; color: #bfcdc4; margin: 10px 0 0; }
+.gold-quote-refresh { appearance: none; border: 0; background: none; font: inherit; font-size: 10px; padding: 7px 0 0; color: #e9dfc4; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.gold-quote-refresh:disabled { opacity: .5; cursor: wait; }
+.gold-quote[data-state="cached"] .gold-quote-price { color: #dfd2ae; }
+@media (max-width: 1659px) {
+  .gold-quote { left: 12px; top: auto; bottom: 112px; width: 208px; transform: none; border-radius: 13px; }
+  .gold-quote summary { padding: 10px 12px; display: grid; grid-template-columns: 1fr auto; gap: 3px 8px; }
+  .gold-quote-heading { margin: 0; grid-column: 1 / 3; gap: 6px; }
+  .gold-quote-symbol { width: 22px; height: 22px; font-size: 12px; border-radius: 5px; }
+  .gold-quote-label { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+  .gold-quote-delay { font-size: 9px; }
+  .gold-quote-price { font-size: 18px; }
+  .gold-quote-unit { grid-column: 2; grid-row: 2; align-self: end; margin: 0; font-size: 10px; }
+  .gold-quote-arrow { position: absolute; top: 12px; right: 12px; }
+  .gold-quote-body { max-height: 220px; overflow: auto; }
+}
+@media (max-width: 650px) {
+  .gold-quote { bottom: calc(176px + env(safe-area-inset-bottom)); width: 196px; }
+}
+
+.gold-quote-title { display: block; margin-bottom: 12px; padding-right: 8px; color: #f0d48f; font-size: 14px; line-height: 1.35; font-weight: 600; }
+@media(max-width:1659px) { .gold-quote-title { grid-column: 1 / -1; margin-bottom: 5px; padding-right: 12px; font-size: 13px; } .gold-quote-unit { grid-row: 3; } }
